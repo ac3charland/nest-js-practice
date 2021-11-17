@@ -3,8 +3,6 @@ import {
     Controller,
     Delete,
     Get,
-    HttpCode,
-    HttpStatus,
     Param,
     Patch,
     Post,
@@ -30,7 +28,6 @@ export class CoffeesController {
     }
 
     @Post()
-    @HttpCode(HttpStatus.GONE)
     create(@Body() createCoffeeDto: CreateCoffeeDto) {
         return this.coffeeService.create(createCoffeeDto)
     }
