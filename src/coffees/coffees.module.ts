@@ -26,7 +26,6 @@ import { Flavor } from './entities/flavor.entity'
                     'buddy brew',
                     'nescafe',
                 ])
-                console.log('[!] Async factory')
                 return coffeeBrands
             },
         },

@@ -17,18 +17,16 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto'
 
 @Controller('coffees')
 export class CoffeesController {
-    constructor(private readonly coffeeService: CoffeesService) { }
+    constructor(private readonly coffeeService: CoffeesService) {}
 
     @Public()
     @Get()
     async findAll(@Query() paginationQuery: PaginationQueryDto) {
-        await new Promise(resolve => setTimeout(resolve, 5000))
         return this.coffeeService.findAll(paginationQuery)
     }
 
     @Get(':id')
     findOne(@Param('id', ParseIntPipe) id: string) {
-        console.log({ id })
         return this.coffeeService.findOne(id)
     }
 
